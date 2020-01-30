@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+#card-header {
+  height: 100px;
+  width: 600px;
+  margin: 0 auto;
+  background-color: darkgray;
+}
+
+#card-body {
+  height: 400px;
+  width: 600px;
+  margin: 20px auto;
+  background-color: beige
+}
+
+#card-footer {
+  height: 100px;
+  width: 600px;
+  margin: 20px auto;
+  background-color: darkgray;
+}
+
+h2 {
+  position: relative;
+  margin: 150px auto;
+}
