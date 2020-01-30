@@ -31,13 +31,13 @@ import {
         opacity: 0
       })),
       transition('in1 => out1', [
-        animate('4s', style({
+        animate('2s', style({
         transform: 'translateX(100%)',
         opacity: 0
       }))
       ]),
       transition('in2 => out2', [
-        animate('3s', style({
+        animate('2s', style({
         transform: 'translateX(100%)',
         opacity: 0
       }))
@@ -48,16 +48,16 @@ import {
         opacity: 0
       }))
       ]),
-      transition('out1 => in1', [
+      transition('out3 => in3', [
         animate('2s', style({
       }))
       ]),
       transition('out2 => in2', [
-        animate('3s', style({
+        animate('2s', style({
       }))
       ]),
-      transition('out3 => in3', [
-        animate('4s', style({
+      transition('out1 => in1', [
+        animate('2s', style({
       }))
       ])
     ])
@@ -67,20 +67,47 @@ import {
 export class DemoComponent implements OnInit {
 
   constructor() { }
-  isIn1 = true;
-  isIn2 = true;
-  isIn3 = true;
+  isIn1 = false;
+  isIn2 = false;
+  isIn3 = false;
+  showAnime = true;
+
+  myfun1() {
+    this.isIn1 = !this.isIn1;
+    setTimeout(() => {
+    this.myfun2();
+    }, 2000);
+    }
+    myfun2() {
+      this.isIn2 = !this.isIn2;
+    setTimeout(() => {
+    this.myfun3();
+    }, 2000);
+    }
+    myfun3() {
+      this.isIn3 = !this.isIn3;
+      setTimeout(() => {
+    this.myfun1();
+    }, 2000);
+    }
+
+  showAnimation() {
+    this.showAnime = false;
+    setTimeout(() => {
+    this.myfun1();
+    }, 2000);
+  }
   
   ngOnInit() {
-    setInterval(() => {
-    this.isIn1 = !this.isIn1;
-    }, 6000);
-    setInterval(() => {
-      this.isIn2 = !this.isIn2;
-    }, 6000);
-    setInterval(() => {
-      this.isIn3 = !this.isIn3;
-    }, 6000);
+    // setInterval(() => {
+    // this.isIn1 = !this.isIn1;
+    // }, 6000);
+    // setInterval(() => {
+    //   this.isIn2 = !this.isIn2;
+    // }, 6000);
+    // setInterval(() => {
+    //   this.isIn3 = !this.isIn3;
+    // }, 6000);
   }
 
 }
