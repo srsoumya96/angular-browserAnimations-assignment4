@@ -49,11 +49,11 @@ import {
       }))
       ]),
       transition('out1 => in1', [
-        animate('1s', style({
+        animate('1s 2s', style({
       }))
       ]),
       transition('out2 => in2', [
-        animate('1s', style({
+        animate('1s 1s', style({
       }))
       ]),
       transition('out3 => in3', [
@@ -70,64 +70,64 @@ export class DemoComponent implements OnInit {
   isIn1 = false;
   isIn2 = false;
   isIn3 = false;
-  showAnime = true;
+  showAnime = false;
 
-    myfun1() {
-    this.isIn1 = !this.isIn1;
-    setTimeout(() => {
-    this.myfun2();
-    }, 2000);
-    }
-    myfun2() {
-      this.isIn2 = !this.isIn2;
-    if(this.isIn2 == true) {
-      setTimeout(() => {
-      this.myfun3();
-      }, 2000);
-    }
-    else {
-      setTimeout(() => {
-    this.myfun1();
-    }, 2000);
-    }
-    }
-    myfun3() {
-      this.isIn3 = !this.isIn3;
-      if(this.isIn3 == true) {
-      setTimeout(() => {
-      this.myfun3();
-      }, 2000);
-      }
-      else {
-        setTimeout(() => {
-      this.myfun2();
-      }, 2000);
-    }
-    }
+  //   myfun1() {
+  //   this.isIn1 = !this.isIn1;
+  //   setTimeout(() => {
+  //   this.myfun2();
+  //   }, 2000);
+  //   }
+  //   myfun2() {
+  //     this.isIn2 = !this.isIn2;
+  //   if(this.isIn2 == true) {
+  //     setTimeout(() => {
+  //     this.myfun3();
+  //     }, 2000);
+  //   }
+  //   else {
+  //     setTimeout(() => {
+  //   this.myfun1();
+  //   }, 2000);
+  //   }
+  //   }
+  //   myfun3() {
+  //     this.isIn3 = !this.isIn3;
+  //     if(this.isIn3 == true) {
+  //     setTimeout(() => {
+  //     this.myfun3();
+  //     }, 2000);
+  //     }
+  //     else {
+  //       setTimeout(() => {
+  //     this.myfun2();
+  //     }, 2000);
+  //   }
+  //   }
 
-    showAnimation() {
-    // this.showAnime = false;
-    setTimeout(() => {
-    this.myfun1();
-    }, 2000);
+  //   showAnimation() {
+  //   // this.showAnime = false;
+  //   setTimeout(() => {
+  //   this.myfun1();
+  //   }, 2000);
     // while(this.showAnime == false) {
     //   this.isIn1 = !this.isIn1;
     //   this.isIn2 = !this.isIn2;
     //   this.isIn3 = !this.isIn3;
     // }
 
-    }
+    // }
   
   ngOnInit() {
-    // setInterval(() => {
-    // this.isIn1 = !this.isIn1;
-    // }, 6000);
-    // setInterval(() => {
-    //   this.isIn2 = !this.isIn2;
-    // }, 6000);
-    // setInterval(() => {
-    //   this.isIn3 = !this.isIn3;
-    // }, 6000);
+    setInterval(() => {
+    this.isIn1 = !this.isIn1;
+    }, 6000);
+    setInterval(() => {
+      this.isIn2 = !this.isIn2;
+    }, 6000);
+    setInterval(() => {
+      this.isIn3 = !this.isIn3;
+    }, 6000);
   }
 
 }
